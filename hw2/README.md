@@ -1,5 +1,5 @@
 # Welcome to Homework 2
-(your name goes here!)
+Sahil Sewani
 2023-09-01
 
 This is my solution to homework 2. I’m using Quarto render this document
@@ -20,11 +20,42 @@ they don’t have to.
 Identify and document the entities, attributes, and relationships using
 Chen notation.
 
-*(remove this block and add your your solution here!)*
+{dot} //\| echo: false
+
+graph ER { layout=neato; scale=1.1; node \[shape=box\]; book,
+library_member; node \[shape=ellipse\]; title, isbn, member_ID,
+publication_year, name, contact_information node
+\[shape=diamond,style=filled,color=lightgrey\]; check_outs
+
+    library_member -- check_outs [label="1",len=1.00]
+    checkouts -- book [label="n",len=1.00]
+
+    library_member -- member_ID
+    library_member -- name
+    library_member -- contact_information
+    book -- isbn
+    book -- title
+    book -- publication_year
+
+}
 
 ## Design Task 2
 
 Identify and document the entities, attributes, and relationships using
 Crow’s Foot notation.
 
-*(remove this block and add your your solution here!)*
+erDiagram LIBRARY_MEMBER \|\|–\|{ BOOK : check_outs
+
+    LIBRARY_MEMBER{
+        string member_ID
+        string name
+        string contact_information
+
+}
+
+    BOOK {
+        string isbn
+        string title
+        string publication_year
+
+}
