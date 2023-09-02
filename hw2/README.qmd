@@ -18,9 +18,6 @@ Imagine you're designing a Library Management System for a small local library. 
 
 Identify and document the entities, attributes, and relationships using Chen notation.
 
- {dot}
-//| echo: false
-
 graph ER {
     layout=neato;
   scale=1.1;
